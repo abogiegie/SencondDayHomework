@@ -73,13 +73,11 @@ public class Exercises3 extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 News tempNews = newsList.get(position);
                 Intent intent = new Intent(Exercises3.this, ChatRoom.class);
                 intent.putExtra("position", position);
                 intent.putExtra("friendName", tempNews.title);
                 intent.putExtra("message", tempNews.hashtag);
-                Toast.makeText(Exercises3.this, "title"+ position + ": " + tempNews.title, Toast.LENGTH_SHORT).show();
                 startActivity(intent);
             }
         });
